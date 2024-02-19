@@ -3,12 +3,6 @@ import createCard from './card.js';
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 
-let quizData = localStorage.getItem('quizApp-Taylor');
-
-if (!quizData) {
-    quizData = data;
-}
-
 const cardsBooked = quizData.filter((element) => element.bookmark);
 
 cardsBooked.forEach((element) => {
