@@ -6,10 +6,13 @@ const cardContainer = document.querySelector('[data-js="card-container"]');
 let quizData = localStorage.getItem('quizApp-GreyAnatomy');
 
 if (!quizData) {
+    localStorage.setItem('quizApp-GreyAnatomy', JSON.stringify(data));
     quizData = data;
+} else {
+    quizData = JSON.parse(quizData);
 }
 
-quizData.forEach((element) => {
-    const card = createCard(element);
+quizData.forEach((element, index) => {
+    const card = createCard(element, index);
     cardContainer.append(card);
 });

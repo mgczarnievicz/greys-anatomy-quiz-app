@@ -1,6 +1,6 @@
 import { newPictureElement, textElement } from './share.js';
 
-export default function createCard(cardInfo) {
+export default function createCard(cardInfo, index) {
     const card = document.createElement('section');
     card.classList.add('card');
 
@@ -11,7 +11,7 @@ export default function createCard(cardInfo) {
     const answer = createAnswer(cardInfo.answer);
     const tags = createTags(cardInfo.tag);
 
-    bookmark.addEventListener('click', toggleBookmark);
+    bookmark.addEventListener('click', (e) => toggleBookmark(e, index));
     answerButton.addEventListener('click', (e) => onClick(e, answer));
 
     card.append(bookmark, question, answerButton, answer, tags);
@@ -67,14 +67,23 @@ function createTags(tagList) {
     return tagsList;
 }
 
+function toggleBookmark(e, index) {
+    let quizData = localStorage.getItem('quizApp-GreyAnatomy');
+    quizData = JSON.parse(quizData);
 
-
-function toggleBookmark(e) {
+    console.log(e.target);
+    console.log('card Info in toogle: ', index);
     const newSrc = e.target.src.includes('bookmark_filled.png')
         ? './assets/bookmark.png'
         : './assets/bookmark_filled.png';
 
     e.target.setAttribute('src', newSrc);
+
+    if (quizData) {
+        console.log('quizData[index]', quizData[index]);
+        quizData[index].bookmark = !quizData[index].bookmark;
+        localStorage.setItem('quizApp-GreyAnatomy', JSON.stringify(quizData));
+    }
 }
 
 function onClick(e, answer) {
