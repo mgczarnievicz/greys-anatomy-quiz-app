@@ -2,7 +2,7 @@
 @import "./header.css";
 @import "./footer.css";
 
-form {
+.form {
     width: 80%;
     background-color: var(---primary-color);
     color: var(---white);
@@ -97,12 +97,42 @@ form textarea:focus {
 }
 
 @media screen and (min-width:1000px) {
+    .form {
+        margin: 0 10px;
+        position: sticky;
+        top: auto;
+    }
+
     .form-main {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .card-container-forms {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+}
+
+@media screen and (min-width:1400px) {
+    .form {
+        /* width: 50%; */
+        width: 600px;
+    }
+
+    .form-main {
+        width: 100%;
         flex-direction: row;
     }
 
     .card-container-forms {
         grid-template-columns: 1fr 1fr;
+        gap: 0px;
+    }
+
+    .card-container-forms .card {
+        width: 550px;
     }
 
 }
