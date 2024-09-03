@@ -1,6 +1,5 @@
-import profileData from '../data/profile.json' assert { type: 'json' };
-import quizData from '../data/data.json' assert { type: 'json' };
-
+import profileData from '../data/profile.json' with { type: 'json' };
+import quizData from '../data/data.json' with { type: 'json' };
 import { newPictureElement, textElement, createSection } from './share.js';
 
 const profileContainer = document.querySelector('[data-js="profile"]');
