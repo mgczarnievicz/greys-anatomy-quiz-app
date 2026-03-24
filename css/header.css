@@ -14,10 +14,11 @@ header {
 
 }
 
-header h1 {
+.title {
     padding: 10px;
     text-align: center;
     font-family: Satisfy;
+    margin-top: 1rem;
 }
 
 header::before {

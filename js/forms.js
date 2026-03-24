@@ -1,4 +1,5 @@
 import createCard from './card.js';
+import createHeader from './header.js';
 
 const MAX_CHARACTERS = 150;
 
@@ -9,46 +10,42 @@ const questionInput = document.querySelector('[data-js="new-question"]');
 const answerInput = document.querySelector('[data-js="new-answer"]');
 
 const characterLeftQuestion = document.querySelector(
-    '[data-js="remaining-characters-question"]'
+	'[data-js="remaining-characters-question"]',
 );
 const characterLeftAnswer = document.querySelector(
-    '[data-js="remaining-characters-answer"]'
+	'[data-js="remaining-characters-answer"]',
 );
-console.log('CardFrom: ', form);
-console.log('newCardContainer: ', newCardContainer);
-console.log('answerInput: ', answerInput);
-console.log('questionInput: ', questionInput);
+
+const header = document.querySelector('[data-js="header"]');
+
+header.append(createHeader());
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('I am in the event with arrow function! :D');
+	event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const dataForm = Object.fromEntries(formData);
-    console.log('dataForm:["input-text"] ', dataForm);
+	const formData = new FormData(event.target);
+	const dataForm = Object.fromEntries(formData);
 
-    let tag = dataForm.tag.split(',');
-    tag = tag.map((element) => element.trim());
-    console.log('tags: ', tag);
+	let tag = dataForm.tag.split(',');
+	tag = tag.map((element) => element.trim());
 
-    const newCard = { ...dataForm, tag, bookmark: false };
-    console.log('newCard: ', newCard);
+	const newCard = { ...dataForm, tag, bookmark: false };
 
-    const card = createCard(newCard);
-    newCardContainer.append(card);
+	const card = createCard(newCard);
+	newCardContainer.append(card);
 
-    form.reset();
+	form.reset();
 });
 
 function characterLeft(e, characterLeftElement) {
-    characterLeftElement.textContent =
-        MAX_CHARACTERS - parseInt(e.target.value.length);
+	characterLeftElement.textContent =
+		MAX_CHARACTERS - parseInt(e.target.value.length);
 }
 
 questionInput.addEventListener('input', (e) => {
-    characterLeft(e, characterLeftQuestion);
+	characterLeft(e, characterLeftQuestion);
 });
 
 answerInput.addEventListener('input', (e) => {
-    characterLeft(e, characterLeftAnswer);
+	characterLeft(e, characterLeftAnswer);
 });

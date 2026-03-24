@@ -1,71 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Form</title>
-        <link rel="stylesheet" href="./css/form.css" />
-        <link rel="stylesheet" href="./css/cards-pages.css" />
-        <script type="module" src="./js/forms.js" defer></script>
-    </head>
-    <body>
-        <header></header>
-        <main class="form-main main-container">
-            <div class="opacity"></div>
-            <form class="form">
-                <label for="question"> Your question:</label>
-                <textarea
-                    name="question"
-                    id="question"
-                    cols="30"
-                    rows="5"
-                    data-js="new-question"
-                ></textarea>
-                <p class="form__remaining-characters">
-                    <span data-js="remaining-characters-question">150</span>
-                    characters left
-                </p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form</title>
+		<link rel="stylesheet" href="./css/form.css" />
+		<link rel="stylesheet" href="./css/cards-pages.css" />
+		<script type="module" src="./js/forms.js" defer></script>
+	</head>
+	<body>
+		<header data-js="header"></header>
+		<main class="form-main main-container">
+			<div class="opacity"></div>
+			<form class="form">
+				<label for="question"> Your question:</label>
+				<textarea
+					name="question"
+					id="question"
+					cols="30"
+					rows="5"
+					data-js="new-question"></textarea>
+				<p class="form__remaining-characters">
+					<span data-js="remaining-characters-question">150</span>
+					characters left
+				</p>
 
-                <label for="answer">Your answer:</label>
-                <textarea
-                    name="answer"
-                    id=""
-                    cols="30"
-                    rows="5"
-                    data-js="new-answer"
-                ></textarea>
-                <p class="form__remaining-characters">
-                    <span data-js="remaining-characters-answer">150</span>
-                    characters left
-                </p>
+				<label for="answer">Your answer:</label>
+				<textarea
+					name="answer"
+					id=""
+					cols="30"
+					rows="5"
+					data-js="new-answer"></textarea>
+				<p class="form__remaining-characters">
+					<span data-js="remaining-characters-answer">150</span>
+					characters left
+				</p>
 
-                <label for="tag">Tag:</label>
-                <input type="text" name="tag" id="" data-js="new-tag" />
-                <p class="form__tags">Separate each tag by a coma</p>
+				<label for="tag">Tag:</label>
+				<input type="text" name="tag" id="" data-js="new-tag" />
+				<p class="form__tags">Separate each tag by a coma</p>
 
-                <button type="submit">Submit</button>
-            </form>
-            <section class="card-container-forms" js-data="new-cards"></section>
-        </main>
+				<button type="submit">Submit</button>
+			</form>
+			<section class="card-container-forms" js-data="new-cards"></section>
+		</main>
 
-        <footer>
-            <nav>
-                <a href="./index.html">
-                    <img src="./assets/home.png" alt="Home Link Page" />
-                </a>
-                <a href="./bookmark.html"
-                    ><img
-                        src="./assets/bookmark_transparent.png"
-                        alt="Bookmark Link Page"
-                /></a>
-                <a class="--current" href="./form.html"
-                    ><img src="./assets/add_filled.png" alt="add"
-                /></a>
-                <a href="./profile.html"
-                    ><img src="./assets/profile.png" alt="Profile Link Page"
-                /></a>
-            </nav>
-        </footer>
-    </body>
+		<footer>
+			<nav>
+				<a href="./index.html">
+					<img src="./assets/home.png" alt="Home Link Page" />
+				</a>
+				<a href="./bookmark.html"
+					><img
+						src="./assets/bookmark_transparent.png"
+						alt="Bookmark Link Page"
+				/></a>
+				<a class="--current" href="./form.html"
+					><img src="./assets/add_filled.png" alt="add"
+				/></a>
+				<a href="./profile.html"
+					><img src="./assets/profile.png" alt="Profile Link Page"
+				/></a>
+			</nav>
+		</footer>
+	</body>
 </html>

@@ -3,6 +3,7 @@
     ---secondary-color: #235F85;
     ---tertiary-color: #587C9F;
     ---tertiary-color-transparent: rgba(88, 124, 159, 0.60);
+
     ---quaternary-color: #FBF2ED;
     ---fifth-color: #9F1B17;
     ---primary-color-transparent: rgba(24, 40, 65, 0.1);
@@ -11,7 +12,6 @@
 
     ---header-height: 100px;
     ---footer-height: 80px;
-
 }
 
 * {
@@ -41,18 +41,21 @@ main {
 
 
 
-:root {
-    --bg-color-light: #fafafa;
-    --bg-color-dark: #232323;
-    --bg-color: var(--bg-color-light);
-}
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg-color: var(--bg-color-dark);
+@media (prefers-color-scheme: light) {
+    :root {
+        ---primary-color: rgb(24, 40, 65);
+        ---secondary-color: #235F85;
+        ---tertiary-color: #587C9F;
+        ---tertiary-color-transparent: rgba(88, 124, 159, 0.60);
     }
 }
 
-:root[data-theme="dark"] {
-    --bg-color: var(--bg-color-dark);
+@media (prefers-color-scheme: dark) {
+    :root {
+        ---primary-color: #092635;
+        ---secondary-color: #1B4242;
+        ---tertiary-color: #5C8374;
+        ---tertiary-color-transparent: rgb(92, 131, 116, 0.459);
+    }
 }
