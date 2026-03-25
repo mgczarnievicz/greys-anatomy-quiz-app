@@ -4,7 +4,7 @@
 
 The **Grey's Anatomy Quiz App** is a project from the Web Development Bootcamp at Spiced Academy. This repository showcases **Part 1** and **Part 2** of a mobile-first quiz application themed around the TV series *Grey's Anatomy*, built with plain HTML, CSS, and JavaScript.
 
-🌐 **Live site**: [my-quiz-app-grey-anatomy.vercel.app](https://my-quiz-app-grey-anatomy.vercel.app/)
+🌐 **Live site**: [greys-anatomy-quiz-app.vercel.app](https://greys-anatomy-quiz-app.vercel.app/)
 
 This is an **advanced solution** that goes beyond the foundational approach. While the app covers the same core features as the vanilla version, almost all pages are generated dynamically through JavaScript — no hardcoded HTML per page. This positions it as a middle ground between a plain HTML solution and a fully component-driven approach like React, and serves as a reference for students to see how far vanilla JS can take you.
 
